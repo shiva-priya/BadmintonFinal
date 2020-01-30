@@ -1,6 +1,6 @@
 package com.badminton.Servlets;
 
-import com.badminton.TournamentDatabase;
+import com.badminton.DAO.TournamentDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +22,7 @@ public class DeleteTournament extends HttpServlet {
         System.out.println(tournName);
         PrintWriter out = resp.getWriter();
 
-        TournamentDatabase tdb = new TournamentDatabase();
+        TournamentDAO tdb = new TournamentDAO();
         int res = tdb.deleteTournament(tournName);
         if(res==0)
         out.write("f");

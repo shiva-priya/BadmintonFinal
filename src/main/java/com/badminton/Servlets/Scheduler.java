@@ -2,23 +2,16 @@ package com.badminton.Servlets;
 
 //import jnr.ffi.annotations.In;
 
-import com.badminton.PlayerDB;
-import com.badminton.SchedulerLogic;
+import com.badminton.Modules.SchedulerLogic;
 import com.google.gson.Gson;
-import jnr.ffi.annotations.In;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 
 
 @WebServlet(name = "Scheduler",urlPatterns = "/Scheduler")

@@ -1,2 +1,0 @@
-Verify Live Update :
-insert into LiveUpdate(mid, tname,team1,team2,player1,player2,setNo,winner) values(121,'pramati','abc','abc','hema','mena',3,'abc');

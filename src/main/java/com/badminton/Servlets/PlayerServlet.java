@@ -1,8 +1,7 @@
 package com.badminton.Servlets;
 
 
-import com.badminton.Player;
-import com.badminton.PlayerDB;
+import com.badminton.DAO.PlayerDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +32,7 @@ public class PlayerServlet extends HttpServlet {
         //String age = req.getParameter("age");
         String pwd = req.getParameter("password");
         PrintWriter out = resp.getWriter();
-        PlayerDB database = new PlayerDB();
+        PlayerDAO database = new PlayerDAO();
         database.addPlayer(fname,lname,email,eid,pwd);
         Cookie cUserName = new Cookie("cookuser", email.trim());
         System.out.println("login cookie = "+cUserName);

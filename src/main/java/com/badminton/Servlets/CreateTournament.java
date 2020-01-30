@@ -1,7 +1,7 @@
 package com.badminton.Servlets;
 
-import com.badminton.PlayerDB;
-import com.badminton.TournamentDatabase;
+import com.badminton.DAO.PlayerDAO;
+import com.badminton.DAO.TournamentDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +17,7 @@ public class CreateTournament extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter p = resp.getWriter();
-        PlayerDB pdb = new PlayerDB();
+        PlayerDAO pdb = new PlayerDAO();
        // resp.setContentType("text/html");
         resp.setContentType("text");
         System.out.println("servlet called");
@@ -29,7 +29,7 @@ public class CreateTournament extends HttpServlet {
         String email = req.getParameter("email");
         System.out.println(email);
         pdb.updatePlayerRole(email);
-        TournamentDatabase tourdb = new TournamentDatabase();
+        TournamentDAO tourdb = new TournamentDAO();
         tourdb.createTournament(name.toString(),winPrize,runPrize,location,email);
         if(name.toString().contains(" ")) {
             String[] s = name.toString().trim().split(" ");

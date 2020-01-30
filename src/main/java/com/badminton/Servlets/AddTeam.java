@@ -1,7 +1,7 @@
 package com.badminton.Servlets;
 
-import com.badminton.PlayerDB;
-import org.json.JSONArray;
+import com.badminton.DAO.PlayerDAO;
+import com.badminton.DAO.TeamsDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,9 +19,9 @@ public class AddTeam  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out =  resp.getWriter();
-        TeamsDB db;
-        db = new TeamsDB();
-        PlayerDB pdb = new PlayerDB();
+        TeamsDAO db;
+        db = new TeamsDAO();
+        PlayerDAO pdb = new PlayerDAO();
         Cookie[] cook = req.getCookies();
         String tournName = cook[2].getValue();
         System.out.println("add team called");

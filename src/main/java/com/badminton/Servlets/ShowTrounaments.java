@@ -1,6 +1,8 @@
 package com.badminton.Servlets;
 
-import com.badminton.*;
+import com.badminton.Modules.TournamentList;
+import com.badminton.Modules.Tournament;
+import com.badminton.DAO.TournamentDAO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -20,9 +22,9 @@ public class ShowTrounaments extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        TournamentDatabase db = new TournamentDatabase();
+        TournamentDAO db = new TournamentDAO();
         ResultSet rs = db.getAll();
-        TourList tlist = new TourList();
+        TournamentList tlist = new TournamentList();
             ArrayList<Tournament> tourList = new ArrayList<>();
             PrintWriter pw = resp.getWriter();
             try {
@@ -36,7 +38,7 @@ public class ShowTrounaments extends HttpServlet {
                 builder.setPrettyPrinting();
                 Gson gson = builder.create();
                 System.out.println(tourList.toString());
-                tlist = gson.fromJson(tourList.toString(), TourList.class);
+                tlist = gson.fromJson(tourList.toString(), TournamentList.class);
                 System.out.println(gson.toJson(tlist));
                 pw.write(gson.toJson(tlist));
                 //System.out.println(playersList);
@@ -54,7 +56,7 @@ public class ShowTrounaments extends HttpServlet {
         String trnName =  req.getParameter("trnName");
         //out.write(email+" "+trnName);
 
-        TournamentDatabase tdb = new TournamentDatabase();
+        TournamentDAO tdb = new TournamentDAO();
         int res = tdb.joinTourn(email, trnName);
         if(res==1)
         {

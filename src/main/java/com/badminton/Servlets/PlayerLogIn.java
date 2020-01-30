@@ -1,6 +1,6 @@
 package com.badminton.Servlets;
 
-import com.badminton.PlayerDB;
+import com.badminton.DAO.PlayerDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 @WebServlet(name = "PlayerLogIn", urlPatterns = "/PlayerLogIn")
 public class PlayerLogIn extends HttpServlet {
@@ -25,7 +24,7 @@ public class PlayerLogIn extends HttpServlet {
         System.out.println(email);
         System.out.println(password);
         System.out.println("--------------------------");
-        PlayerDB database = new PlayerDB();
+        PlayerDAO database = new PlayerDAO();
         System.out.println("before login check");
         boolean result = database.checkLogin(email,password);
         System.out.println("after login check");

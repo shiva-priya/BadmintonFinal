@@ -175,112 +175,37 @@ function addSchedule(responseText)
       var fdiv = document.createElement('div');
       fdiv.textContent = "MATCHES";
       var i =0;
-
+      alert(list);
+      
       while(i<len)
       {
             if(list[i].includes("Round"))
             {
-                  if(i!=0)
-                  {
-                        scediv.appendChild(rounddiv);
-                        jQuery('#rrdiv').html('');
-                  }
-                  else
-                  {
+                
                         scediv.appendChild(fdiv);
                         var rounddiv = document.createElement('div');
+                        rounddiv.textContent = list[i];
                         rounddiv.setAttribute('class','rdiv');
+                        rounddiv.style.fontSize="large";
+                        rounddiv.style.fontWeight="bold";
+                        
                         rounddiv.setAttribute('id','rrdiv');
-                  }
-            }
-            var tdiv = document.createElement('h2');
-            tdiv.textContent = list[i];
-            tdiv.setAttribute('class','tdiv');
-
-            rounddiv.appendChild(tdiv);
-            
-            i++;
-      }
-
-      document.body.appendChild(scediv);
-      
-}
-
-
-
-      /*
-      while(i<len)
-      {
-            if(list[i].includes("Round"))
-            {
-                  if(i!=0)
-                  {
                         scediv.appendChild(rounddiv);
-                  }
-                  else
-                  {
-                        scediv.appendChild(fdiv);
-
-                        var rounddiv = document.createElement('div');
-                  }
+               
             }
-            var tdiv = document.createElement('h6');
-            tdiv.textContent = list[i];
-            tdiv.setAttribute('class','tdiv');
-
-            rounddiv.appendChild(tdiv);
+            else{
+                  var tdiv = document.createElement('h2');
+                  tdiv.textContent = list[i];
+                  tdiv.setAttribute('class','tdiv');
+                  scediv.appendChild(tdiv);
+            }
+            //rounddiv.appendChild(tdiv);
             
             i++;
       }
+      
 
       document.body.appendChild(scediv);
-
+      
 }
 
-while(i<len)
-      {
-            if(list[i].includes("Round"))
-            {
-                  var rdiv = document.createElement('div');
-                  var j = i+1;
-                  while(list[j].includes("Round")==false)
-                  {
-                        var tdiv = document.createElement('h6');
-                        tdiv.textContent = list[i];
-                        tdiv.setAttribute('class','tdiv');
-                        j++;
-
-                        rdiv.appendChild(tdiv);
-                  }
-                  i = j;
-            }
-            document.body.appendChild(rdiv);
-      }
-
-
-/*
-
-      var scediv = document.createElement('div');
-      var i = 0;
-      var rdiv = document.createElement('div');
-      rdiv.textContent = "MATCHES";
-      while(i<len)
-      {
-            if(list[i].includes("Round"))
-            {
-                  scediv.appendChild(rdiv);
-                  var rdiv = document.createElement('div');
-                  rdiv.setAttribute('class','rdiv');
-            }
-            var tdiv = document.createElement('h6');
-            tdiv.textContent = list[i];
-            tdiv.setAttribute('class','tdiv');
-
-            rdiv.appendChild(tdiv);
-            
-            i++;
-      }
-
-      */
-
-      

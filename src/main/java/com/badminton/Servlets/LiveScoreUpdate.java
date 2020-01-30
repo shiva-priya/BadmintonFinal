@@ -1,12 +1,9 @@
 package com.badminton.Servlets;
 
 
-import com.badminton.PlayerDB;
-import com.badminton.Tournament;
-import com.badminton.TournamentDatabase;
+import com.badminton.DAO.PlayerDAO;
+import com.badminton.DAO.TournamentDAO;
 import com.google.gson.*;
-import com.google.gson.JsonParser;
-import org.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @WebServlet(name = "LiveScoreUpdate",urlPatterns = "/LiveScoreUpdate")
@@ -36,8 +32,8 @@ public class LiveScoreUpdate extends HttpServlet {
         int mid = Integer.parseInt(req.getParameter("mid"));
         Cookie[] cook = req.getCookies();
         String tournName = cook[2].getValue();
-        TournamentDatabase tdb = new TournamentDatabase();
-        PlayerDB pdb = new PlayerDB();
+        TournamentDAO tdb = new TournamentDAO();
+        PlayerDAO pdb = new PlayerDAO();
 
         if(set==3)
         {
@@ -78,7 +74,7 @@ public class LiveScoreUpdate extends HttpServlet {
       //  resp.setContentType( "application/json" );
         PrintWriter out = resp.getWriter();
      //   out.write("hey called");
-        TournamentDatabase tdb = new TournamentDatabase();
+        TournamentDAO tdb = new TournamentDAO();
         JsonObject res = null;
         try {
             res = tdb.getliveScore();

@@ -55,6 +55,15 @@ background-size: cover;
 
 }
 
+.rdiv{
+    background-color: rgb(253, 251, 251);
+    padding: 14px 20px;
+    margin-left: 25%;
+    border: rgb(194, 240, 70);
+    height: 5%;
+    width: 50%;
+}
+
 .tdiv
 {
     background-color: rgb(219, 201, 201);
@@ -69,4 +78,10 @@ background-size: cover;
 {
     background-color: rgb(255, 166, 166);
     box-shadow: 0 0 10px 8px rgb(52, 208, 255);
+}
+
+.rdiv:hover
+{
+   
+    box-shadow: 0 0 10px 8px rgb(153, 214, 9);
 }

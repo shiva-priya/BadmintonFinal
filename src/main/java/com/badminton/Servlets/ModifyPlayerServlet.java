@@ -1,6 +1,6 @@
 package com.badminton.Servlets;
 
-import com.badminton.PlayerDB;
+import com.badminton.DAO.PlayerDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +12,6 @@ import java.io.IOException;
 @WebServlet(name = "ModifyPlayerServlet", urlPatterns = "/ModifyPlayerServlet")
 public class ModifyPlayerServlet extends HttpServlet {
 
-
-    public ModifyPlayerServlet()
-    {
-
-    }
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        String name= req.getParameter("player");
@@ -27,13 +21,13 @@ public class ModifyPlayerServlet extends HttpServlet {
         int bidStatus =Integer.parseInt(req.getParameter("bidStatus"));
 
 
-        PlayerDB database = new PlayerDB();
+        PlayerDAO database = new PlayerDAO();
      boolean result=   database.modifyPlayer(name,role,bidStatus);
 
         if (result) {
-            resp.getWriter().write("Not inserted");
+            resp.getWriter().write("Error! Try Again");
         } else {
-            resp.getWriter().write("Inserted Successfully");
+            resp.getWriter().write("Modified Successfully");
         }
 
     }

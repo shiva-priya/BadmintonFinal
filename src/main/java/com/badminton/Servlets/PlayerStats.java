@@ -1,8 +1,8 @@
 package com.badminton.Servlets;
 
-import com.badminton.Player;
-import com.badminton.PlayerDB;
-import com.badminton.PlayerList;
+import com.badminton.DAO.PlayerDAO;
+import com.badminton.Modules.Player;
+import com.badminton.Modules.PlayerList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -22,7 +22,7 @@ public class PlayerStats extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PlayerDB db = new PlayerDB();
+        PlayerDAO db = new PlayerDAO();
         ResultSet rs  = db.getAllPlayers();
         //  resp.setContentType();
         //System.out.println(rs);

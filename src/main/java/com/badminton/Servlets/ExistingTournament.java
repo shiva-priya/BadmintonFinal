@@ -1,6 +1,6 @@
 package com.badminton.Servlets;
 
-import com.badminton.TournamentDatabase;
+import com.badminton.DAO.TournamentDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,7 +21,7 @@ public class ExistingTournament extends HttpServlet {
         PrintWriter out = resp.getWriter();
         String trnName = req.getParameter("trnName");
         String email = req.getParameter("email");
-        TournamentDatabase tdb = new TournamentDatabase();
+        TournamentDAO tdb = new TournamentDAO();
 
         int k = tdb.checkAdminTournament(email, trnName);
         if(k!=1)

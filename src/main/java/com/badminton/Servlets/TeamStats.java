@@ -1,9 +1,10 @@
 package com.badminton.Servlets;
 
-//import com.badminton.PlayerList;
-import com.badminton.Teams;
+//import com.badminton.Modules.PlayerList;
+import com.badminton.Modules.Teams;
 
-import com.badminton.TeamsList;
+import com.badminton.Modules.TeamsList;
+import com.badminton.DAO.TeamsDAO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -25,9 +26,9 @@ public class TeamStats extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
-        TeamsDB tdb = new TeamsDB();
-        Cookie[] cook = req.getCookies();
-        String tournName = cook[2].getValue();
+        TeamsDAO tdb = new TeamsDAO();
+       // Cookie[] cook = req.getCookies();
+        String tournName = req.getParameter("trnName");
         ResultSet rs = tdb.getAll(tournName);
         ArrayList<Teams> teams = new ArrayList<>();
         Teams team = new Teams();
