@@ -83,7 +83,14 @@ function UIfunction(details){
  }
 
  var typeT = document.createElement('h4');
+ if(type=="null")
+ {
+  typeT.textContent ="Experice Level : " + "Beginner";
+ }
+ else
+ {
  typeT.textContent ="Experice Level : " + type;
+ }
  var posT = document.createElement('h4');
  posT.setAttribute('class','position');
  if(pos==0 && mpl==0)

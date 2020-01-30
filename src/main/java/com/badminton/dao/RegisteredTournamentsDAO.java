@@ -8,7 +8,7 @@ public class RegisteredTournamentsDAO {
     ConnectionDAO db = new ConnectionDAO();
     Statement stmt;
     public RegisteredTournamentsDAO(){
-        stmt = db.dbConnection();
+        stmt = db.StatementInit();
     }
 
     public int deleteTournament(String tourName){

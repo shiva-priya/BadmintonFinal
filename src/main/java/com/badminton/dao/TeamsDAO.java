@@ -11,10 +11,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class TeamsDAO {
-    ConnectionDAO db = new ConnectionDAO();
+    ConnectionDAO db = new ConnectionDAO("home");
     private static Statement stmt;
     public TeamsDAO() {
-        stmt  = db.dbConnection();
+        stmt  = db.StatementInit();
     }
 
     public int addTournament(String tournName, String teamName)

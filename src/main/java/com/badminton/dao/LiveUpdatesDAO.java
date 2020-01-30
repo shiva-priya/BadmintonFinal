@@ -13,7 +13,7 @@ public class LiveUpdatesDAO {
     ConnectionDAO db = new ConnectionDAO();
     Statement stmt;
     public LiveUpdatesDAO(){
-        stmt = db.dbConnection();
+        stmt = db.StatementInit();
     }
 
     public int liveupdate(int mid,String tournName,String t1,String t2,String p1,String p2,int set,String win) {

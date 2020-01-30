@@ -15,7 +15,7 @@ public class TournamentDAO {
     Statement stmt;
 
     public TournamentDAO() {
-        stmt = db.dbConnection();
+        stmt = db.StatementInit();
     }
 
     public void createTournament(String name, String wPrize, String rPrize, String loc, String email) {

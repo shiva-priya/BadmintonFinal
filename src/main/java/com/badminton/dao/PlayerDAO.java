@@ -13,7 +13,7 @@ public class PlayerDAO {
 
     public PlayerDAO()
     {
-        stmt = db.dbConnection();
+        stmt = db.StatementInit();
     }
 
     public ResultSet getAllPlayers() {
