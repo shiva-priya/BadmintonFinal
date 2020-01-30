@@ -9,7 +9,7 @@
     <description></description>
     <display-name>HelloWorld</display-name>
     <servlet-name>PlayerServlet</servlet-name>
-    <servlet-class>com.badminton.Servlets.PlayerServlet</servlet-class>
+    <servlet-class>com.badminton.servlets.PlayerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PlayerServlet</servlet-name>
@@ -19,7 +19,7 @@
     <description></description>
     <display-name>HelloWorld</display-name>
     <servlet-name>PlayerLogin</servlet-name>
-    <servlet-class>com.badminton.Servlets.PlayerLogin</servlet-class>
+    <servlet-class>com.badminton.servlets.PlayerLogin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PlayerLogin</servlet-name>

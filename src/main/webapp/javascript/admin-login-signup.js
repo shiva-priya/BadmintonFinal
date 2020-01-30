@@ -255,7 +255,7 @@ function validateAdminSignUpForm() {
                         window.location.replace("AdminDashboard.html");
                         }
                 else{
-                     // alert(responseText);
+                      alert("Wrong Credentials!");
                       window.location.replace("adminReg.html");
                 }
           });

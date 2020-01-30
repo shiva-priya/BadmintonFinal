@@ -21,8 +21,11 @@ function showTeams(){
         trnName : tourName
     }, function(responseText) {
         if(responseText.length>0 && responseText !== "null"){
-             document.getElementById('maindiv').style.display='none';
-             UIfunction(responseText);
+            //  document.getElementById('maindiv').style.display='none';
+             var body = document.body;
+            //  if(document.getElementById('maindiv1') != null)
+                body.removeChild(body.childNodes[3]);
+                           UIfunction(responseText);
         }
         else{
             window.location.replace("playerReg.html");
@@ -119,6 +122,7 @@ function UIfunction(details){
     // var team = JSON.stringify(details);
     var maindiv = document.createElement('div');
          maindiv.setAttribute('class','maindiv');
+         maindiv.setAttribute('id','maindiv1');
  
       var tem = JSON.parse(details);
     //  alert("teams"+tem);
